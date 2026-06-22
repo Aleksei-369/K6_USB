@@ -17,9 +17,9 @@ classdef FromApp
         % Команды (логические флаги кнопок)
         CmdStart  (1,1) logical = false
         CmdZero   (1,1) logical = false
-        CmdAir    (1,1) logical = false
+        CmdAirGrad    (1,1) logical = false
 
-        CmdRsrv1  (1,1) logical = false
+        CmdAirCurrent  (1,1) logical = false
         CmdRsrv2  (1,1) logical = false
         CmdRsrv3  (1,1) logical = false
         CmdRsrv4  (1,1) logical = false
