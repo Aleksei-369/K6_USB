@@ -18,8 +18,8 @@ classdef FromApp
         CmdStart  (1,1) logical = false
         CmdZero   (1,1) logical = false
         CmdAirGrad    (1,1) logical = false
-
         CmdAirCurrent  (1,1) logical = false
+
         CmdRsrv2  (1,1) logical = false
         CmdRsrv3  (1,1) logical = false
         CmdRsrv4  (1,1) logical = false
@@ -64,10 +64,10 @@ classdef FromApp
             % Прямой и надежный расчет без тяжелой рефлексии метаклассов.
             % Гарантирует возвращение чистого числового значения double.
             
-            numScalars = 5;  % Amplitude, Periods, Sharpness
+            numScalars = 5;  % Amplitude, Periods, Sharpness, Kzero, AirGrad
             numVectors = 2;  % xx, yy
             vecLength  = 25; % Длина каждого вектора
-            numButtons = 7;  % CmdStart, CmdZero, CmdAir
+            numButtons = 7;  % CmdStart, CmdZero, CmdAirGrad, CmdAirCurrent
             
             totalElements = numScalars + (numVectors * vecLength) + numButtons;
             bytes = double(totalElements * 8); % Явно приводим к double
