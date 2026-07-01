@@ -104,6 +104,14 @@ int main() {
                 // Отправляем данные
                 libusb_bulk_transfer(handle, 0x01, udp_in_buffer, 40000, &transferred, 500);
         }
+        else if (received_bytes == 64) {
+            // ПОЙМАЛИ 64-БАЙТОВЫЙ ПАКЕТ УПРАВЛЕНИЯ
+            //uint8_t cmd_code = udp_in_buffer[0]; // Команда лежит в самом первом байте!
+            //printf("[BEEP] Control packet received. Command code: %d\n", cmd_code);
+            
+            // Мгновенно выстреливаем все 64 байта в STM32 (контроллер в железе готов их принять)
+            //libusb_bulk_transfer(handle, 0x01, udp_in_buffer, 64, &transferred, 500);
+        }
         
         // Даем Windows немного подышать (1мс)
         Sleep(1);
