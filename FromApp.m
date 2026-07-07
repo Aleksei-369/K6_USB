@@ -14,13 +14,14 @@ classdef FromApp
         Kzero     (1,1) double = 0.0296
         AirGrad   (1,1) double = 41000
         
-        % Команды (логические флаги кнопок)
+        % Команды (логические флаги)
         CmdStart  (1,1) logical = false
         CmdZero   (1,1) logical = false
         CmdAirGrad    (1,1) logical = false
         CmdAirCurrent  (1,1) logical = false
 
-        CmdRsrv2  (1,1) logical = false
+        % Другие настройки
+        SoundVolume  (1,1) double = 0.0
         CmdRsrv3  (1,1) logical = false
         CmdRsrv4  (1,1) logical = false
     end
@@ -64,12 +65,12 @@ classdef FromApp
             % Прямой и надежный расчет без тяжелой рефлексии метаклассов.
             % Гарантирует возвращение чистого числового значения double.
             
-            numScalars = 5;  % Amplitude, Periods, Sharpness, Kzero, AirGrad
+            numScalars = 6;  % Amplitude, Periods, Sharpness, Kzero, AirGrad, SoundVolume
             numVectors = 2;  % xx, yy
             vecLength  = 25; % Длина каждого вектора
-            numButtons = 7;  % CmdStart, CmdZero, CmdAirGrad, CmdAirCurrent
+            numFlags = 6;  % CmdStart, CmdZero, CmdAirGrad, CmdAirCurrent
             
-            totalElements = numScalars + (numVectors * vecLength) + numButtons;
+            totalElements = numScalars + (numVectors * vecLength) + numFlags;
             bytes = double(totalElements * 8); % Явно приводим к double
         end
     end

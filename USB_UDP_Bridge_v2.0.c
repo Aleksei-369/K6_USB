@@ -1,4 +1,4 @@
-// Компиляция: mbuild USB_UDP_Bridge_v2.0.c -output USB_UDP_Bridge_v2.0 -I. -L. -llibusb-1.0.lib
+// Компиляция: mbuild USB_UDP_Bridge_v2.0.c LINKFLAGS="$LINKFLAGS /OUT:USB_UDP_Bridge_v2.0.exe" -I. -L. -llibusb-1.0.lib
 
 #include <windows.h>
 #include <stdio.h>
@@ -152,7 +152,7 @@ int main() {
                 tx_frame.packet_type = 1;                             // 1 = ТИП КОМАНДЫ
                 tx_frame.payload.cmd.command_id = 1;                  // 1 = Звуковой зуммер
                 tx_frame.payload.cmd.param1 = udp_cmd_buffer[0];      // Код писка (1-сингл, 2-дабл)
-                
+                tx_frame.payload.cmd.param2 = udp_cmd_buffer[1];      // Громкость
                 printf("[BEEP] Bus Free. Forwarding structural command (Code: %d) to USB...\n", tx_frame.payload.cmd.param1);
                 
                 // Выстреливаем монолитные 64 байта фрейма в STM32 (таймаут минимальный - 10 мс)

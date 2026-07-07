@@ -125,7 +125,7 @@ elems(11).DocUnits = '';
 elems(11).Description = '';
 
 elems(12) = Simulink.BusElement;
-elems(12).Name = 'CmdRsrv2';
+elems(12).Name = 'SoundVolume';
 elems(12).Dimensions = 1;
 elems(12).DimensionsMode = 'Fixed';
 elems(12).DataType = 'double';
