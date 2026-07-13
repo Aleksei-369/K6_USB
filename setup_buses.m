@@ -157,6 +157,17 @@ elems(14).Max = [];
 elems(14).DocUnits = '';
 elems(14).Description = '';
 
+elems(15) = Simulink.BusElement;
+elems(15).Name = 'ProbeType';
+elems(15).Dimensions = 1;
+elems(15).DimensionsMode = 'Fixed';
+elems(15).DataType = 'double';
+elems(15).Complexity = 'real';
+elems(15).Min = [];
+elems(15).Max = [];
+elems(15).DocUnits = '';
+elems(15).Description = '';
+
 FromAppBus_Type = Simulink.Bus;
 FromAppBus_Type.HeaderFile = '';
 FromAppBus_Type.Description = '';
@@ -266,4 +277,49 @@ NH_MetricsBus_Type.PreserveElementDimensions = 0;
 NH_MetricsBus_Type.Elements = elems;
 clear elems;
 assignin('base','NH_MetricsBus_Type', NH_MetricsBus_Type);
+
+% Bus object: N_Bus_Type 
+clear elems;
+elems(1) = Simulink.BusElement;
+elems(1).Name = 'Kzero';
+elems(1).Dimensions = 1;
+elems(1).DimensionsMode = 'Fixed';
+elems(1).DataType = 'double';
+elems(1).Complexity = 'real';
+elems(1).Min = [];
+elems(1).Max = [];
+elems(1).DocUnits = '';
+elems(1).Description = '';
+
+elems(2) = Simulink.BusElement;
+elems(2).Name = 'N_GradAir';
+elems(2).Dimensions = 1;
+elems(2).DimensionsMode = 'Fixed';
+elems(2).DataType = 'double';
+elems(2).Complexity = 'real';
+elems(2).Min = [];
+elems(2).Max = [];
+elems(2).DocUnits = '';
+elems(2).Description = '';
+
+elems(3) = Simulink.BusElement;
+elems(3).Name = 'NormN_Buf';
+elems(3).Dimensions = 16;
+elems(3).DimensionsMode = 'Fixed';
+elems(3).DataType = 'double';
+elems(3).Complexity = 'real';
+elems(3).Min = [];
+elems(3).Max = [];
+elems(3).DocUnits = '';
+elems(3).Description = '';
+
+N_Bus_Type = Simulink.Bus;
+N_Bus_Type.HeaderFile = '';
+N_Bus_Type.Description = '';
+N_Bus_Type.DataScope = 'Auto';
+N_Bus_Type.Alignment = -1;
+N_Bus_Type.PreserveElementDimensions = 0;
+N_Bus_Type.Elements = elems;
+clear elems;
+assignin('base','N_Bus_Type', N_Bus_Type);
 

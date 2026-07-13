@@ -24,6 +24,7 @@ classdef FromApp
         SoundVolume  (1,1) double = 0.0
         CmdRsrv3  (1,1) logical = false
         CmdRsrv4  (1,1) logical = false
+        ProbeType  (1,1) double = 2.0 % тип ИД ( 0 - ИД0, 1 - ИД1 ...)
     end
     
     methods
@@ -65,7 +66,7 @@ classdef FromApp
             % Прямой и надежный расчет без тяжелой рефлексии метаклассов.
             % Гарантирует возвращение чистого числового значения double.
             
-            numScalars = 6;  % Amplitude, Periods, Sharpness, Kzero, AirGrad, SoundVolume
+            numScalars = 7;  % Amplitude, Periods, Sharpness, Kzero, AirGrad, SoundVolume, ProbeType
             numVectors = 2;  % xx, yy
             vecLength  = 25; % Длина каждого вектора
             numFlags = 6;  % CmdStart, CmdZero, CmdAirGrad, CmdAirCurrent
@@ -73,5 +74,21 @@ classdef FromApp
             totalElements = numScalars + (numVectors * vecLength) + numFlags;
             bytes = double(totalElements * 8); % Явно приводим к double
         end
+    end
+
+    methods
+        function str = getProbeTypeString(obj)
+            
+            switch obj.ProbeType
+                case 0
+                    str = "ИД0";
+                case 1
+                    str = "ИД1";
+                case 2
+                    str = "ИД2";
+                otherwise
+                    str = "ИДx";
+            end
+        end        
     end
 end
