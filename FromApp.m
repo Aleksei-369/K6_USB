@@ -23,8 +23,12 @@ classdef FromApp
         % Другие настройки
         SoundVolume  (1,1) double = 0.0
         CmdRsrv3  (1,1) logical = false
-        CmdRsrv4  (1,1) logical = false
+
         ProbeType  (1,1) double = 2.0 % тип ИД ( 0 - ИД0, 1 - ИД1 ...)
+
+        % Настройки воздуха
+        AirSTD      (1,1) double = 5.0
+        AirDelta    (1,1) double = 100.0
     end
     
     methods
@@ -66,7 +70,7 @@ classdef FromApp
             % Прямой и надежный расчет без тяжелой рефлексии метаклассов.
             % Гарантирует возвращение чистого числового значения double.
             
-            numScalars = 7;  % Amplitude, Periods, Sharpness, Kzero, AirGrad, SoundVolume, ProbeType
+            numScalars = 9;  % Amplitude, Periods, Sharpness, Kzero, AirGrad, SoundVolume, ProbeType, AirSTD, AirDelta
             numVectors = 2;  % xx, yy
             vecLength  = 25; % Длина каждого вектора
             numFlags = 6;  % CmdStart, CmdZero, CmdAirGrad, CmdAirCurrent

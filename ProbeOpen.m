@@ -27,11 +27,12 @@ if ischar(file)
         app.LUT_data(:, 2) = num2cell( N);
         app.LUT_data(:, 3) = num2cell( zeros( length(H), 1));
 
-        app.Settings.Amplitude = m( 1, 6);
-        app.Settings.Periods = m( 2, 6);
-        app.Settings.Sharpness = m( 3, 6);
-        app.Settings.Kzero = m( 4, 6);
-        app.Settings.AirGrad = m( 5, 6);
+        app.Settings.ProbeType = m(1,6);
+        app.Settings.Amplitude = m( 2, 6);
+        app.Settings.Periods = m( 3, 6);
+        app.Settings.Sharpness = m( 4, 6);
+        app.Settings.Kzero = m( 5, 6);
+        app.Settings.AirGrad = m( 6, 6);
 
         % Показываем сообщение об успехе
         uialert(app.UIFigure, 'Данные из Excel успешно загружены в приложение!', 'Успех', 'Icon', 'success');

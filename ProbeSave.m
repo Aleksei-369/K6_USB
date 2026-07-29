@@ -16,6 +16,7 @@ if ischar(file)
 
     % 3. ВЫТЯГИВАЕМ ПАРАМЕТРЫ НАПРЯМУЮ ИЗ СВОЙСТВ APP
     paramsCell = {
+        'ProbeType' , app.Settings.ProbeType;
         'Amplitude', app.Settings.Amplitude;
         'Periods',   app.Settings.Periods;
         'Sharpness', app.Settings.Sharpness;

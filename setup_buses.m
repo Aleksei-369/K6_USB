@@ -1,6 +1,40 @@
 function setup_buses() 
 % SETUP_BUSES initializes a set of bus objects in the MATLAB base workspace 
 
+% Bus object: AirParamsBus_Type 
+clear elems;
+elems(1) = Simulink.BusElement;
+elems(1).Name = 'STD';
+elems(1).Dimensions = 1;
+elems(1).DimensionsMode = 'Fixed';
+elems(1).DataType = 'double';
+elems(1).Complexity = 'real';
+elems(1).Min = [];
+elems(1).Max = [];
+elems(1).DocUnits = '';
+elems(1).Description = '';
+
+elems(2) = Simulink.BusElement;
+elems(2).Name = 'Delta';
+elems(2).Dimensions = 1;
+elems(2).DimensionsMode = 'Fixed';
+elems(2).DataType = 'double';
+elems(2).Complexity = 'real';
+elems(2).Min = [];
+elems(2).Max = [];
+elems(2).DocUnits = '';
+elems(2).Description = '';
+
+AirParamsBus_Type = Simulink.Bus;
+AirParamsBus_Type.HeaderFile = '';
+AirParamsBus_Type.Description = '';
+AirParamsBus_Type.DataScope = 'Auto';
+AirParamsBus_Type.Alignment = -1;
+AirParamsBus_Type.PreserveElementDimensions = 0;
+AirParamsBus_Type.Elements = elems;
+clear elems;
+assignin('base','AirParamsBus_Type', AirParamsBus_Type);
+
 % Bus object: FromAppBus_Type 
 clear elems;
 elems(1) = Simulink.BusElement;
@@ -147,7 +181,7 @@ elems(13).DocUnits = '';
 elems(13).Description = '';
 
 elems(14) = Simulink.BusElement;
-elems(14).Name = 'CmdRsrv4';
+elems(14).Name = 'ProbeType';
 elems(14).Dimensions = 1;
 elems(14).DimensionsMode = 'Fixed';
 elems(14).DataType = 'double';
@@ -158,7 +192,7 @@ elems(14).DocUnits = '';
 elems(14).Description = '';
 
 elems(15) = Simulink.BusElement;
-elems(15).Name = 'ProbeType';
+elems(15).Name = 'AirParam_STD';
 elems(15).Dimensions = 1;
 elems(15).DimensionsMode = 'Fixed';
 elems(15).DataType = 'double';
@@ -167,6 +201,17 @@ elems(15).Min = [];
 elems(15).Max = [];
 elems(15).DocUnits = '';
 elems(15).Description = '';
+
+elems(16) = Simulink.BusElement;
+elems(16).Name = 'AirParam_Delta';
+elems(16).Dimensions = 1;
+elems(16).DimensionsMode = 'Fixed';
+elems(16).DataType = 'double';
+elems(16).Complexity = 'real';
+elems(16).Min = [];
+elems(16).Max = [];
+elems(16).DocUnits = '';
+elems(16).Description = '';
 
 FromAppBus_Type = Simulink.Bus;
 FromAppBus_Type.HeaderFile = '';
