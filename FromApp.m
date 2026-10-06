@@ -29,6 +29,10 @@ classdef FromApp
         % Настройки воздуха
         AirSTD      (1,1) double = 5.0
         AirDelta    (1,1) double = 100.0
+
+        % Предел измерения
+        MeasLimitH  (1,1) double = 3130
+        MeasLimitN  (1,1) double = 41300
     end
     
     methods
@@ -67,15 +71,13 @@ classdef FromApp
         end
 
         function bytes = getRequiredBufferSize()
-            % Прямой и надежный расчет без тяжелой рефлексии метаклассов.
-            % Гарантирует возвращение чистого числового значения double.
+           
+            numScalars = 16;
             
-            numScalars = 9;  % Amplitude, Periods, Sharpness, Kzero, AirGrad, SoundVolume, ProbeType, AirSTD, AirDelta
             numVectors = 2;  % xx, yy
             vecLength  = 25; % Длина каждого вектора
-            numFlags = 6;  % CmdStart, CmdZero, CmdAirGrad, CmdAirCurrent
-            
-            totalElements = numScalars + (numVectors * vecLength) + numFlags;
+                        
+            totalElements = numScalars + (numVectors * vecLength);
             bytes = double(totalElements * 8); % Явно приводим к double
         end
     end

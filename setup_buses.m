@@ -213,6 +213,28 @@ elems(16).Max = [];
 elems(16).DocUnits = '';
 elems(16).Description = '';
 
+elems(17) = Simulink.BusElement;
+elems(17).Name = 'MeasLimitH';
+elems(17).Dimensions = 1;
+elems(17).DimensionsMode = 'Fixed';
+elems(17).DataType = 'double';
+elems(17).Complexity = 'real';
+elems(17).Min = [];
+elems(17).Max = [];
+elems(17).DocUnits = '';
+elems(17).Description = '';
+
+elems(18) = Simulink.BusElement;
+elems(18).Name = 'MeasLimitN';
+elems(18).Dimensions = 1;
+elems(18).DimensionsMode = 'Fixed';
+elems(18).DataType = 'double';
+elems(18).Complexity = 'real';
+elems(18).Min = [];
+elems(18).Max = [];
+elems(18).DocUnits = '';
+elems(18).Description = '';
+
 FromAppBus_Type = Simulink.Bus;
 FromAppBus_Type.HeaderFile = '';
 FromAppBus_Type.Description = '';

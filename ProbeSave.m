@@ -16,12 +16,15 @@ if ischar(file)
 
     % 3. ВЫТЯГИВАЕМ ПАРАМЕТРЫ НАПРЯМУЮ ИЗ СВОЙСТВ APP
     paramsCell = {
-        'ProbeType' , app.Settings.ProbeType;
-        'Amplitude', app.Settings.Amplitude;
-        'Periods',   app.Settings.Periods;
-        'Sharpness', app.Settings.Sharpness;
-        'Kzero',     app.Settings.Kzero;
-        'AirGrad',   app.Settings.AirGrad
+        'ProbeType',    app.Settings.ProbeType;
+        'Amplitude',    app.Settings.Amplitude;
+        'Periods',      app.Settings.Periods;
+        'Sharpness',    app.Settings.Sharpness;
+        'Kzero',        app.Settings.Kzero;
+        'AirGrad',      app.Settings.AirGrad;
+        'AirSTD',       app.Settings.AirSTD;
+        'AirDelta',     app.Settings.AirDelta;
+        'MeasLimitH',   app.Settings.MeasLimitH
         };
 
     % 4. Записываем параметры в Excel, начиная с ячейки E2

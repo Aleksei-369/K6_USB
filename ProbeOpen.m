@@ -33,6 +33,9 @@ if ischar(file)
         app.Settings.Sharpness = m( 4, 6);
         app.Settings.Kzero = m( 5, 6);
         app.Settings.AirGrad = m( 6, 6);
+        app.Settings.AirSTD = m( 7, 6);
+        app.Settings.AirDelta = m( 8, 6);
+        app.Settings.MeasLimitH = m( 9, 6);
 
         % Показываем сообщение об успехе
         uialert(app.UIFigure, 'Данные из Excel успешно загружены в приложение!', 'Успех', 'Icon', 'success');
