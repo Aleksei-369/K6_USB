@@ -128,14 +128,14 @@ int main() {
         
         // -------------------------------------------------------------------------
         // ПОТОК А (ВВЕРХ В ПК): Сигнал датчиков из STM32 -> транзитом в Simulink
-        // Теймаут 35мс, чтобы гарантированно успевать в измерительную сетку 50 Гц (20 мс)
+        // Теймаут 39мс, чтобы гарантированно успевать в измерительную сетку 50 Гц (20 мс)
         // -------------------------------------------------------------------------
-        int r = libusb_bulk_transfer(handle, 0x81, usb_in_buffer, SIZE_IN, &transferred, 35);
+        int r = libusb_bulk_transfer(handle, 0x81, usb_in_buffer, SIZE_IN, &transferred, 39);
         if (r == 0 && transferred == SIZE_IN) {
             sendto(sock_main, (const char*)usb_in_buffer, SIZE_IN, 0, (struct sockaddr*)&addr_to_matlab, sizeof(addr_to_matlab));
         } else if (r != LIBUSB_ERROR_TIMEOUT) {
-            printf("\n[FATAL] USB Hardware Error: %s\n", libusb_error_name(r));
-            break; 
+            printf("\n[FATAL] USB Hardware Error: %s\nTransferred %u\n", libusb_error_name(r), transferred);
+            //break; 
         }
 
         // -------------------------------------------------------------------------

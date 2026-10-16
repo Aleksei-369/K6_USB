@@ -12,10 +12,11 @@ classdef FromApp
         yy        (1,25) double = [3122 3121.9 3121.8 3121.7 3121.6 3121.5 3121.4 3121.3 3121.2 3121.1 3121 2440 1964 1465 976 698 466 335 232 181 154 103 51 20 0]
         
         Kzero     (1,1) double = 0.0296
-        AirGrad   (1,1) double = 41000
+        AirGrad   (1,1) double = 41000        
+        
+        WaveForm  (1,1) double = 1.0 % 0 - sin, 1 - pulse
         
         % Команды (логические флаги)
-        CmdStart  (1,1) logical = false
         CmdZero   (1,1) logical = false
         CmdAirGrad    (1,1) logical = false
         CmdAirCurrent  (1,1) logical = false

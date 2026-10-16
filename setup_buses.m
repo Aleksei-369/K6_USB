@@ -115,7 +115,7 @@ elems(7).DocUnits = '';
 elems(7).Description = '';
 
 elems(8) = Simulink.BusElement;
-elems(8).Name = 'CmdStart';
+elems(8).Name = 'WaveForm';
 elems(8).Dimensions = 1;
 elems(8).DimensionsMode = 'Fixed';
 elems(8).DataType = 'double';

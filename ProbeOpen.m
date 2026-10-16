@@ -27,7 +27,7 @@ if ischar(file)
         app.LUT_data(:, 2) = num2cell( N);
         app.LUT_data(:, 3) = num2cell( zeros( length(H), 1));
 
-        app.Settings.ProbeType = m(1,6);
+        app.Settings.ProbeType = m( 1,6);
         app.Settings.Amplitude = m( 2, 6);
         app.Settings.Periods = m( 3, 6);
         app.Settings.Sharpness = m( 4, 6);
@@ -36,6 +36,7 @@ if ischar(file)
         app.Settings.AirSTD = m( 7, 6);
         app.Settings.AirDelta = m( 8, 6);
         app.Settings.MeasLimitH = m( 9, 6);
+        app.Settings.WaveForm = m( 10, 6);
 
         % Показываем сообщение об успехе
         uialert(app.UIFigure, 'Данные из Excel успешно загружены в приложение!', 'Успех', 'Icon', 'success');

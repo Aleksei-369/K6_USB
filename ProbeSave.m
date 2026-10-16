@@ -24,7 +24,8 @@ if ischar(file)
         'AirGrad',      app.Settings.AirGrad;
         'AirSTD',       app.Settings.AirSTD;
         'AirDelta',     app.Settings.AirDelta;
-        'MeasLimitH',   app.Settings.MeasLimitH
+        'MeasLimitH',   app.Settings.MeasLimitH;
+        'WaveForm',     app.Settings.WaveForm
         };
 
     % 4. Записываем параметры в Excel, начиная с ячейки E2
